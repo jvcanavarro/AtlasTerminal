@@ -1,0 +1,26 @@
+<LoginWindow>:
+    orientation: "vertical"
+    spacing: 5
+
+    BoxLayout:
+        size_hint_y: None
+        height: 35
+
+        Label:
+            text: "Bus Digital Control"
+            bold: True
+        
+        Button:
+            text: "x"
+            size_hint_x: .05
+
+    BoxLayout:
+        orientation: "vertical"
+        TextInput:
+            hint_text: "Username"
+
+        TextInput:
+            hint_text: "Password"
+
+        Button:
+            text: "Login"
