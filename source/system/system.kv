@@ -1,0 +1,67 @@
+<FlatButton@ButtonBehavior+Label>:
+    font_size: 14
+
+
+<SystemWindow>:
+    id: default
+    orientation: 'vertical'
+
+    canvas.before:
+        Color:
+            rgba: (1, 1, 1, 1)
+        Rectangle:
+            size: self.size
+            pos: self.pos
+
+    BoxLayout:
+        id: header
+        size_hint_y: None
+        height: 40
+
+        canvas.before:
+            Color:
+                rgba: (51 / 255, 0, 51 / 255, 1)
+            Rectangle:
+                size: self.size
+                pos: self.pos
+
+        Label:
+            text: 'Terminal Control'
+            bold: True
+            color: (1, 1, 1, 1)
+
+        FlatButton:
+            id: logged
+            text: 'João Canavarro'
+            color: (1, 1, 1, 1)
+
+    BoxLayout:
+        id: current
+        size_hint_y: None
+        height: 50
+
+        canvas.before:
+            Color:
+                rgba: (1, 1, 1, 1)
+            Rectangle:
+                size: self.size
+                pos: self.pos
+
+        Button:
+            text: 'Current Item:'
+            background_normal: ''
+            background_color:  (51 / 255, 0, 51 / 255, 1)
+            size_hint_x: .4
+
+        Button:
+            id: current_product
+            text: 'Default Product'
+            background_normal: ''
+            background_color:  (51 / 255, 0, 51 / 255, 1)
+        
+        Button:
+            id: current_price
+            text: '0.00'
+            background_normal: ''
+            background_color:  (51 / 255, 0, 51 / 255, 1)
+            size_hint_x: .2
