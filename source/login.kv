@@ -1,26 +1,67 @@
 <LoginWindow>:
+    id: main_window
     orientation: "vertical"
-    spacing: 5
+    spacing: 10
+
+    canvas.before:
+        Color:
+            rgba: (1, 1, 1, 1)
+        Rectangle:
+            size: self.size
+            pos: self.pos
 
     BoxLayout:
         size_hint_y: None
         height: 35
 
+        canvas.before:
+            Color:
+                rgba: (51 / 255, 0, 51 / 255, 1)
+            Rectangle:
+                size: self.size
+                pos: self.pos
+
         Label:
             text: "Bus Digital Control"
             bold: True
-        
-        Button:
-            text: "x"
-            size_hint_x: .05
 
     BoxLayout:
         orientation: "vertical"
-        TextInput:
-            hint_text: "Username"
+        padding: self.size[0] / 3, 10
+        spacing: 20
 
-        TextInput:
-            hint_text: "Password"
+        BoxLayout:
+            orientation: "vertical"
+            size_hint_y: None
+            spacing: 10
+            height: 100
+
+            Label:
+                id: info
+                text: ''
+                markup: True
+                size_hint_y: None
+                height: 20
+
+            TextInput:
+                id: username_field
+                hint_text: "Username"
+                multiline: False
+                focus: True
+                on_text_validate: password_field.focus = True
+
+
+            TextInput:
+                id: password_field
+                hint_text: "Password"
+                multiline: False
+                password: True
+                on_text_validate: root.validate_user()
 
         Button:
             text: "Login"
+            size_hint_y: None
+            height: 40
+            background_color: (51 / 255, 0, 51 / 255, 1)
+            background_normal:'' 
+            on_release: root.validate_user()

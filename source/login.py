@@ -3,7 +3,19 @@ from kivy.uix.boxlayout import BoxLayout
 
 
 class LoginWindow(BoxLayout):
-    pass
+    # def __init__(self, **kwargs):
+    #     super().__init__(**kwargs)
+
+    def validate_user(self):
+        user = self.ids.username_field
+        pwd = self.ids.password_field
+        info = self.ids.info
+
+        username = user.text
+        password = pwd.text
+
+        if username == '' or password == '':
+            info.text = '[color=#FF0000]username and password required[/color]'
 
 
 class LoginApp(App):
