@@ -20,7 +20,7 @@
 
         canvas.before:
             Color:
-                rgba: (51 / 255, 0, 51 / 255, 1)
+                rgba: (71 / 255, 0, 71 / 255, 1)
             Rectangle:
                 size: self.size
                 pos: self.pos
@@ -65,3 +65,134 @@
             background_normal: ''
             background_color:  (51 / 255, 0, 51 / 255, 1)
             size_hint_x: .2
+
+    BoxLayout:
+        padding: 10
+
+        BoxLayout:
+            id: product_details
+            orientation: 'vertical'
+            size_hint_x: .8
+            spacing: 10
+
+            BoxLayout:
+                id: product_labels
+                size_hint_y: None
+                height: 40
+
+                canvas.before:
+                    Color:
+                        rgba: (71 / 255, 0, 71 / 255, 1)
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
+
+                FlatButton:
+                    text: 'Qty'
+                    size_hint_x: .1
+
+                FlatButton:
+                    text: 'Product Code'
+                    size_hint_x: .3
+
+                FlatButton:
+                    text: 'Disc'
+                    size_hint_x: .1
+
+                FlatButton:
+                    text: 'Disc %'
+                    size_hint_x: .1
+
+                FlatButton:
+                    text: 'VAT'
+                    size_hint_x: .1
+
+                FlatButton:
+                    text: 'Price'
+                    size_hint_x: .1
+
+                FlatButton:
+                    text: 'Product Total'
+                    size_hint_x: .2
+
+            BoxLayout:
+                id: product_inputs
+                size_hint_y: None
+                height: 30
+                spacing: 5
+
+                TextInput:
+                    id: qty_input
+                    size_hint_x: .1
+
+                TextInput:
+                    id: code_input
+                    size_hint_x: .3
+
+                TextInput:
+                    id: disc_input
+                    size_hint_x: .1
+
+                TextInput:
+                    id: disc_perc_input
+                    size_hint_x: .1
+
+                TextInput:
+                    id: vat_input
+                    size_hint_x: .1
+
+                TextInput:
+                    id: price_input
+                    size_hint_x: .1
+
+                TextInput:
+                    id: total_input
+                    size_hint_x: .2
+
+        BoxLayout:
+            id: add_to_cart
+            orientation: 'vertical'
+
+            BoxLayout:
+                size_hint_y: None
+                height: 30
+
+                canvas.before:
+                    Color:  
+                        rgba: (71 / 255, 0, 71 / 255, 0)
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
+                
+                Label:
+                    text: 'Code'
+                    size_hint_x: .3
+
+                Label:
+                    text: 'Product Name'
+                    size_hint_x: .3
+
+                Label:
+                    text: 'Qty'
+                    size_hint_x: .1
+
+                Label:
+                    text: 'Disc'
+                    size_hint_x: .1
+                
+                Label:
+                    text: 'Price'
+                    size_hint_x: .1
+                
+                Label:
+                    text: 'Product Total'
+                    size_hint_x: .1
+
+            BoxLayout:
+                id: products
+
+        BoxLayout:
+            id: preview
+            orientation: 'vertical'
+            size_hint_x: .2
+            
