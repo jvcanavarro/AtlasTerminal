@@ -149,44 +149,44 @@
                     id: total_input
                     size_hint_x: .2
 
-        BoxLayout:
-            id: add_to_cart
-            orientation: 'vertical'
-
             BoxLayout:
-                size_hint_y: None
-                height: 30
+                id: add_to_cart
+                orientation: 'vertical'
 
-                canvas.before:
-                    Color:  
-                        rgba: (71 / 255, 0, 71 / 255, 0)
-                    Rectangle:
-                        size: self.size
-                        pos: self.pos
-                
-                Label:
-                    text: 'Code'
-                    size_hint_x: .3
+                BoxLayout:
+                    size_hint_y: None
+                    height: 30
 
-                Label:
-                    text: 'Product Name'
-                    size_hint_x: .3
+                    canvas.before:
+                        Color:  
+                            rgba: (71 / 255, 0, 71 / 255, 1)
+                        Rectangle:
+                            size: self.size
+                            pos: self.pos
+                    
+                    Label:
+                        text: 'Code'
+                        size_hint_x: .3
 
-                Label:
-                    text: 'Qty'
-                    size_hint_x: .1
+                    Label:
+                        text: 'Product Name'
+                        size_hint_x: .3
 
-                Label:
-                    text: 'Disc'
-                    size_hint_x: .1
-                
-                Label:
-                    text: 'Price'
-                    size_hint_x: .1
-                
-                Label:
-                    text: 'Product Total'
-                    size_hint_x: .1
+                    Label:
+                        text: 'Qty'
+                        size_hint_x: .1
+
+                    Label:
+                        text: 'Disc'
+                        size_hint_x: .1
+                    
+                    Label:
+                        text: 'Price'
+                        size_hint_x: .1
+                    
+                    Label:
+                        text: 'Product Total'
+                        size_hint_x: .1
 
             BoxLayout:
                 id: products
