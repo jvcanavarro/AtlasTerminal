@@ -3,7 +3,11 @@ from kivy.uix.boxlayout import BoxLayout
 
 
 class SystemWindow(BoxLayout):
-    pass
+    # def awesome_function(self):
+    #     products_container = self.ids.products
+    #     details = BoxLayout()
+    #     details.add_widget()
+        pass
 
 
 class SystemApp(App):

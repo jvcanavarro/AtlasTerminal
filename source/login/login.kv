@@ -1,7 +1,6 @@
 <LoginWindow>:
     id: main_window
     orientation: "vertical"
-    spacing: 10
 
     canvas.before:
         Color:
@@ -22,7 +21,7 @@
                 pos: self.pos
 
         Label:
-            text: "Digital Control"
+            text: "Terminal Rodoviário UFPA"
             bold: True
 
     BoxLayout:
@@ -65,3 +64,27 @@
             background_color: (51 / 255, 0, 51 / 255, 1)
             background_normal:'' 
             on_release: root.validate_user()
+
+    BoxLayout:
+        orientation: "horizontal"
+        size_hint_y: None
+        padding: 10
+        spacing: 20
+        height: 60
+
+    canvas.before:
+        Color:
+            rgba: (1, 1, 1, 1)
+        Rectangle:
+            size: self.size
+            pos: self.pos
+        Button:
+            text: "Esqueci a senha"
+            background_color: (51 / 255, 0, 51 / 255, 1)
+            background_normal:'' 
+
+        Button:
+            text: "Criar Conta"
+            background_color: (51 / 255, 0, 51 / 255, 1)
+            background_normal:'' 
+            
