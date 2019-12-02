@@ -20,21 +20,17 @@
 
         canvas.before:
             Color:
-                rgba: (71 / 255, 0, 71 / 255, 1)
+                rgba: (21 / 255, .15, 111 / 255, 1)
             Rectangle:
                 size: self.size
                 pos: self.pos
 
-        Label:
-            text: 'Terminal Control'
-            size_hint_x: .9
+        FlatButton:
+            text: 'ATLAS'
+            font_size: 18
             bold: True
             color: (1, 1, 1, 1)
 
-        FlatButton:
-            id: logged
-            text: 'João Canavarro'
-            color: (1, 1, 1, 1)
 
     BoxLayout:
         id: current
@@ -43,38 +39,37 @@
 
         canvas.before:
             Color:
-                rgba: (1, 1, 1, 1)
+                rgba: (21 / 255, .15, 81 / 255, 1)
             Rectangle:
                 size: self.size
                 pos: self.pos
 
-        Button:
-            text: 'Current Item:'
+        Label:
+            id: date
+            text: 'Data'
             background_normal: ''
-            background_color:  (21 / 255, .25, 81 / 255, 1)
-            size_hint_x: .4
+            background_color:  (21 / 255, .15, 81 / 255, 1)
 
-        Button:
-            id: current_product
-            text: 'Default Product'
+        Label:
+            id: current_turn
+            text: 'Turno'
             background_normal: ''
-            background_color:  (21 / 255, .25, 11 / 255, 1)
+            background_color:  (21 / 255, .15, 81 / 255, 1)
         
-        Button:
-            id: current_price
-            text: '0.00'
+        Label
+            id: current_order
+            text: 'Linha'
             background_normal: ''
-            background_color:  (91 / 255, 0, 51 / 255, 1)
-            size_hint_x: .2
+            background_color:  (21 / 255, .15, 81 / 255, 1)
 
     BoxLayout:
-        padding: 10
+        padding: 4
 
         BoxLayout:
             id: product_details
             orientation: 'vertical'
             size_hint_x: .8
-            spacing: 10
+            spacing: 5
 
             BoxLayout:
                 id: product_labels
@@ -83,38 +78,35 @@
 
                 canvas.before:
                     Color:
-                        rgba: (71 / 255, 0, 71 / 255, 1)
+                        rgba: (21 / 255, .15, 81 / 255, 1)
                     Rectangle:
                         size: self.size
                         pos: self.pos
 
                 FlatButton:
-                    text: 'Qty'
+                    text: 'Empregado'
+                    size_hint_x: .15
+
+                FlatButton:
+                    text: 'Função'
                     size_hint_x: .1
 
                 FlatButton:
-                    text: 'Product Code'
-                    size_hint_x: .3
-
-                FlatButton:
-                    text: 'Disc'
+                    text: 'Entrada'
                     size_hint_x: .1
 
                 FlatButton:
-                    text: 'Disc %'
+                    text: 'Saída'
                     size_hint_x: .1
 
                 FlatButton:
-                    text: 'VAT'
+                    text: 'Horas Extras'
                     size_hint_x: .1
 
                 FlatButton:
-                    text: 'Price'
+                    text: 'Adicionais'
                     size_hint_x: .1
 
-                FlatButton:
-                    text: 'Product Total'
-                    size_hint_x: .2
 
             BoxLayout:
                 id: product_inputs
@@ -124,33 +116,73 @@
 
                 TextInput:
                     id: qty_input
-                    size_hint_x: .1
+                    multiline: False
+                    size_hint_x: .15
 
                 TextInput:
                     id: code_input
-                    size_hint_x: .3
+                    size_hint_x: .1
                     multiline: False
                     on_text_validate: root.awesome_function()
 
                 TextInput:
                     id: disc_input
+                    multiline: False
                     size_hint_x: .1
 
                 TextInput:
                     id: disc_perc_input
+                    multiline: False
                     size_hint_x: .1
 
                 TextInput:
                     id: vat_input
+                    multiline: False
                     size_hint_x: .1
 
                 TextInput:
                     id: price_input
+                    multiline: False
+                    size_hint_x: .1
+
+
+            BoxLayout:
+                id: product_inputs
+                size_hint_y: None
+                height: 30
+                spacing: 5
+
+                TextInput:
+                    id: qty_input
+                    multiline: False
+                    size_hint_x: .15
+
+                TextInput:
+                    id: code_input
+                    size_hint_x: .1
+                    multiline: False
+                    on_text_validate: root.awesome_function()
+
+                TextInput:
+                    id: disc_input
+                    multiline: False
                     size_hint_x: .1
 
                 TextInput:
-                    id: total_input
-                    size_hint_x: .2
+                    id: disc_perc_input
+                    multiline: False
+                    size_hint_x: .1
+
+                TextInput:
+                    id: vat_input
+                    multiline: False
+                    size_hint_x: .1
+
+                TextInput:
+                    id: price_input
+                    multiline: False
+                    size_hint_x: .1
+
 
             BoxLayout:
                 id: add_to_cart
@@ -162,7 +194,7 @@
 
                     canvas.before:
                         Color:  
-                            rgba: (71 / 255, 0, 71 / 255, 1)
+                            rgba: (21 / 255, .15, 81 / 255, 1)
                         Rectangle:
                             size: self.size
                             pos: self.pos
@@ -198,7 +230,8 @@
         BoxLayout:
             id: preview
             orientation: 'vertical'
-            size_hint_x: .2
+            size_hint_x: .20
+            padding: 10
 
             TextInput:
                 id: receipt_preview
