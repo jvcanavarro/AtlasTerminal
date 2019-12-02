@@ -27,6 +27,7 @@
 
         Label:
             text: 'Terminal Control'
+            size_hint_x: .9
             bold: True
             color: (1, 1, 1, 1)
 
@@ -50,20 +51,20 @@
         Button:
             text: 'Current Item:'
             background_normal: ''
-            background_color:  (51 / 255, 0, 51 / 255, 1)
+            background_color:  (21 / 255, .25, 81 / 255, 1)
             size_hint_x: .4
 
         Button:
             id: current_product
             text: 'Default Product'
             background_normal: ''
-            background_color:  (51 / 255, 0, 51 / 255, 1)
+            background_color:  (21 / 255, .25, 11 / 255, 1)
         
         Button:
             id: current_price
             text: '0.00'
             background_normal: ''
-            background_color:  (51 / 255, 0, 51 / 255, 1)
+            background_color:  (91 / 255, 0, 51 / 255, 1)
             size_hint_x: .2
 
     BoxLayout:
@@ -129,7 +130,7 @@
                     id: code_input
                     size_hint_x: .3
                     multiline: False
-                    # on_text_validadate: root.awesome_function()
+                    on_text_validate: root.awesome_function()
 
                 TextInput:
                     id: disc_input
@@ -168,7 +169,7 @@
                     
                     Label:
                         text: 'Code'
-                        size_hint_x: .3
+                        size_hint_x: .2
 
                     Label:
                         text: 'Product Name'
@@ -188,13 +189,19 @@
                     
                     Label:
                         text: 'Product Total'
-                        size_hint_x: .1
+                        size_hint_x: .2
 
-            BoxLayout:
-                id: products
+                GridLayout:
+                    id: products
+                    cols: 1
 
         BoxLayout:
             id: preview
             orientation: 'vertical'
             size_hint_x: .2
+
+            TextInput:
+                id: receipt_preview
+                readonly: True
+                text: 'The Collector\n123 Main St\nKnowhere, Space\n\nTel: (555)-123-456\nReceipt No: \n\nDate: \n'
             
