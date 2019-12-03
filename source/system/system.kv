@@ -20,26 +20,26 @@
 
         canvas.before:
             Color:
-                rgba: (21 / 255, .15, 111 / 255, 1)
+                rgba: (.1, .1, .1, 1)
             Rectangle:
                 size: self.size
                 pos: self.pos
 
         FlatButton:
-            text: 'ATLAS'
+            text: 'ATLAS Terminal'
             font_size: 18
             bold: True
             color: (1, 1, 1, 1)
 
 
     BoxLayout:
-        id: current
+        id: general_info
         size_hint_y: None
-        height: 50
+        height: 20
 
         canvas.before:
             Color:
-                rgba: (21 / 255, .15, 81 / 255, 1)
+                rgba: (.1, .1, .1, 1)
             Rectangle:
                 size: self.size
                 pos: self.pos
@@ -47,34 +47,29 @@
         Label:
             id: date
             text: 'Data'
-            background_normal: ''
-            background_color:  (21 / 255, .15, 81 / 255, 1)
 
         Label:
             id: current_turn
             text: 'Turno'
-            background_normal: ''
-            background_color:  (21 / 255, .15, 81 / 255, 1)
         
         Label
             id: current_order
             text: 'Linha'
-            background_normal: ''
-            background_color:  (21 / 255, .15, 81 / 255, 1)
 
     BoxLayout:
-        padding: 4
+        padding: 7
+        spacing: 5
 
         BoxLayout:
-            id: product_details
+            id: employees
             orientation: 'vertical'
             size_hint_x: .8
             spacing: 5
 
             BoxLayout:
-                id: product_labels
+                id: emp_labels
                 size_hint_y: None
-                height: 40
+                height: 30
 
                 canvas.before:
                     Color:
@@ -109,88 +104,88 @@
 
 
             BoxLayout:
-                id: product_inputs
+                id: emp_input
                 size_hint_y: None
                 height: 30
                 spacing: 5
 
                 TextInput:
-                    id: qty_input
+                    id: name
                     multiline: False
                     size_hint_x: .15
 
                 TextInput:
-                    id: code_input
+                    id: function
                     size_hint_x: .1
                     multiline: False
-                    on_text_validate: root.awesome_function()
 
                 TextInput:
-                    id: disc_input
-                    multiline: False
-                    size_hint_x: .1
-
-                TextInput:
-                    id: disc_perc_input
+                    id: entry_time
                     multiline: False
                     size_hint_x: .1
 
                 TextInput:
-                    id: vat_input
+                    id: exit_time
                     multiline: False
                     size_hint_x: .1
 
                 TextInput:
-                    id: price_input
+                    id: extra_hours
+                    multiline: False
+                    size_hint_x: .1
+
+                TextInput:
+                    id: adds
                     multiline: False
                     size_hint_x: .1
 
 
             BoxLayout:
-                id: product_inputs
+                id: emp_input
                 size_hint_y: None
                 height: 30
                 spacing: 5
 
                 TextInput:
-                    id: qty_input
+                    id: name
                     multiline: False
                     size_hint_x: .15
 
                 TextInput:
-                    id: code_input
+                    id: function
                     size_hint_x: .1
                     multiline: False
-                    on_text_validate: root.awesome_function()
 
                 TextInput:
-                    id: disc_input
-                    multiline: False
-                    size_hint_x: .1
-
-                TextInput:
-                    id: disc_perc_input
+                    id: entry_time
                     multiline: False
                     size_hint_x: .1
 
                 TextInput:
-                    id: vat_input
+                    id: exit_time
                     multiline: False
                     size_hint_x: .1
 
                 TextInput:
-                    id: price_input
+                    id: extra_hours
                     multiline: False
                     size_hint_x: .1
+
+                TextInput:
+                    id: adds
+                    multiline: False
+                    size_hint_x: .1
+
 
 
             BoxLayout:
-                id: add_to_cart
                 orientation: 'vertical'
+                id: travel_labels
+                size_hint_y: None
 
                 BoxLayout:
                     size_hint_y: None
-                    height: 30
+                    height: 17
 
                     canvas.before:
                         Color:  
@@ -200,41 +195,109 @@
                             pos: self.pos
                     
                     Label:
-                        text: 'Code'
-                        size_hint_x: .2
+                        text: 'Duração da Viagem'
 
                     Label:
-                        text: 'Product Name'
-                        size_hint_x: .3
+                        text: 'Intervalo de Repouso'
+                        size_hint_x: .4
+                
+                BoxLayout:
+                    size_hint_y: None
+                    height: 17
+
+                    canvas.before:
+                        Color:  
+                            rgba: (21 / 255, .15, 81 / 255, 1)
+                        Rectangle:
+                            size: self.size
+                            pos: self.pos
 
                     Label:
-                        text: 'Qty'
-                        size_hint_x: .1
+                        text: 'Saída'
 
                     Label:
-                        text: 'Disc'
-                        size_hint_x: .1
-                    
-                    Label:
-                        text: 'Price'
-                        size_hint_x: .1
-                    
-                    Label:
-                        text: 'Product Total'
-                        size_hint_x: .2
+                        text: 'P1'
 
-                GridLayout:
-                    id: products
-                    cols: 1
+                    Label:
+                        text: 'P2'
+
+                    Label:
+                        text: 'P3'
+
+                    Label:
+                        text: 'Fiscal'
+
+                    Label:
+                        text: 'Chegada'
+
+                    Label:
+                        text: 'Atraso'
+
+                    Label:
+                        text: 'Início'
+
+                    Label:
+                        text: 'Término'
+
+                    Label:
+                        text: 'Total'
+
+
+            BoxLayout:
+                id: travel_inputs
+                size_hint_y: None
+                height: 30
+                spacing: 5
+
+                TextInput:
+                    id: travel_exit
+                    multiline: False
+
+                TextInput:
+                    id: stop1
+                    multiline: False
+
+                TextInput:
+                    id: stop2
+                    multiline: False
+
+                TextInput:
+                    id: stop3
+                    multiline: False
+
+                TextInput:
+                    id: supervisor
+                    multiline: False
+
+                TextInput:
+                    id: travel_entry
+                    multiline: False
+                    on_text_validate: root.add_route()
+
+                TextInput:
+                    id: delay
+                    multiline: False
+
+                TextInput:
+                    id: rest_begin
+                    multiline: False
+
+                TextInput:
+                    id: rest_end
+                    multiline: False
+
+                TextInput:
+                    id: rest_total
+                    multiline: False
+
 
         BoxLayout:
             id: preview
             orientation: 'vertical'
-            size_hint_x: .20
-            padding: 10
+            size_hint_x: .2
 
             TextInput:
                 id: receipt_preview
                 readonly: True
-                text: 'The Collector\n123 Main St\nKnowhere, Space\n\nTel: (555)-123-456\nReceipt No: \n\nDate: \n'
+                text: 'Nome da Empresa\n'
             
