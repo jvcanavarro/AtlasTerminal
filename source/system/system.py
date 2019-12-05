@@ -6,27 +6,22 @@ from kivy.uix.label import Label
 
 class SystemWindow(BoxLayout):
     def add_route(self):
-        container = self.ids.employees
+        travel = BoxLayout(size_hint_y=None, height=30, spacing=5)
 
-        travel = BoxLayout(size_hint_y=None, height=30, spacing=5,
-                pos_hint={'bottom':1})
+        travel.add_widget(TextInput())
+        travel.add_widget(TextInput())
+        travel.add_widget(TextInput())
+        travel.add_widget(TextInput())
+        travel.add_widget(TextInput())
+        travel.add_widget(TextInput())
+        travel.add_widget(TextInput())
+        travel.add_widget(TextInput())
+        travel.add_widget(TextInput())
+        travel.add_widget(TextInput())
+
+        container = self.ids.travels
         container.add_widget(travel)
 
-        code = TextInput(multiline=False)
-        code.bind(on_text_validate=self.add_route)
-
-        name = TextInput()
-        qty = TextInput()
-        disc = TextInput()
-        price = TextInput()
-        total = TextInput()
-
-        travel.add_widget(code)
-        travel.add_widget(name)
-        travel.add_widget(qty)
-        travel.add_widget(disc)
-        travel.add_widget(price)
-        travel.add_widget(total)
 
 
 class SystemApp(App):
