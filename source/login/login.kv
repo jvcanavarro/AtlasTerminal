@@ -15,14 +15,24 @@
 
         canvas.before:
             Color:
-                rgba: (51 / 255, 0, 51 / 255, 1)
+                rgba: (.1, .1, .1, 1)
             Rectangle:
                 size: self.size
                 pos: self.pos
 
         Label:
-            text: "Terminal Rodoviário UFPA"
+            text: "Atlas Terminal"
             bold: True
+
+    BoxLayout:
+        id: temp
+
+    Image:
+        source: 'bus.png'
+        keep_ratio: False
+        allow_stretch: True
+        size_hint: 0.2, 0.4
+        pos_hint: {'center_x': 0.5, 'center_y': 0.35}
 
     BoxLayout:
         orientation: "vertical"
@@ -61,7 +71,7 @@
             text: "Login"
             size_hint_y: None
             height: 40
-            background_color: (51 / 255, 0, 51 / 255, 1)
+            background_color: (21 / 255, .15, 81 / 255, 1)
             background_normal:'' 
             on_release: root.validate_user()
 
@@ -80,11 +90,11 @@
                 pos: self.pos
         Button:
             text: "Esqueci a senha"
-            background_color: (51 / 255, 0, 51 / 255, 1)
+            background_color: (21 / 255, .15, 81 / 255, 1)
             background_normal:'' 
 
         Button:
             text: "Criar Conta"
-            background_color: (51 / 255, 0, 51 / 255, 1)
+            background_color: (21 / 255, .15, 81 / 255, 1)
             background_normal:'' 
             
