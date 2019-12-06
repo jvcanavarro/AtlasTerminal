@@ -3,9 +3,6 @@ from kivy.uix.boxlayout import BoxLayout
 
 
 class LoginWindow(BoxLayout):
-    # def __init__(self, **kwargs):
-    #     super().__init__(**kwargs)
-
     def validate_user(self):
         user = self.ids.username_field
         pwd = self.ids.password_field
