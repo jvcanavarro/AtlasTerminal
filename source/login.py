@@ -1,8 +1,8 @@
 from kivy.app import App
-from kivy.uix.boxlayout import BoxLayout
+from kivy.uix.screenmanager import Screen
 
 
-class LoginWindow(BoxLayout):
+class LoginScreen(Screen):
     def validate_user(self):
         user = self.ids.username_field
         pwd = self.ids.password_field
@@ -17,7 +17,7 @@ class LoginWindow(BoxLayout):
 
 class LoginApp(App):
     def build(self):
-        return LoginWindow()
+        return LoginScreen()
 
 
 if __name__ == '__main__':

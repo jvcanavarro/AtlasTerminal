@@ -1,14 +1,14 @@
 from kivy.app import App
-from kivy.uix.boxlayout import BoxLayout
+from kivy.uix.screenmanager import Screen
 
 
-class LinesWindow(BoxLayout):
+class LinesScreen(Screen):
     pass
 
 
 class LinesApp(App):
     def build(self):
-        return LinesWindow()
+        return LinesScreen()
 
 
 if __name__ == '__main__':
