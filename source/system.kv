@@ -1,297 +1,294 @@
-<FlatButton@ButtonBehavior+Label>:
-    font_size: 14
-
-
-<SystemWindow>:
-    id: default
-    orientation: 'vertical'
-
-    canvas.before:
-        Color:
-            rgba: (1, 1, 1, 1)
-        Rectangle:
-            size: self.size
-            pos: self.pos
-
+<SystemScreen>:
     BoxLayout:
-        id: header
-        size_hint_y: None
-        height: 35
+        id: default
+        orientation: 'vertical'
 
         canvas.before:
             Color:
-                rgba: (.1, .1, .1, 1)
+                rgba: (1, 1, 1, 1)
             Rectangle:
                 size: self.size
                 pos: self.pos
-
-        FlatButton:
-            text: 'Atlas Terminal'
-            bold: True
-
-
-    BoxLayout:
-        id: general_info
-        size_hint_y: None
-        height: 20
-
-        canvas.before:
-            Color:
-                rgba: (.1, .1, .1, 1)
-            Rectangle:
-                size: self.size
-                pos: self.pos
-
-        Label:
-            id: date
-            text: 'Data'
-
-        Label:
-            id: current_turn
-            text: 'Turno'
-        
-        Label
-            id: current_order
-            text: 'Linha'
-
-    BoxLayout:
-        padding: 7
-        spacing: 5
 
         BoxLayout:
-            id: employees
-            orientation: 'vertical'
-            size_hint_x: .8
+            id: header
+            size_hint_y: None
+            height: 35
+
+            canvas.before:
+                Color:
+                    rgba: (.1, .1, .1, 1)
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+
+            Label:
+                text: 'Atlas Terminal'
+                bold: True
+
+
+        BoxLayout:
+            id: general_info
+            size_hint_y: None
+            height: 20
+
+            canvas.before:
+                Color:
+                    rgba: (.1, .1, .1, 1)
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+
+            Label:
+                id: date
+                text: 'Data'
+
+            Label:
+                id: current_turn
+                text: 'Turno'
+            
+            Label
+                id: current_order
+                text: 'Linha'
+
+        BoxLayout:
+            padding: 7
             spacing: 5
 
             BoxLayout:
-                id: emp_labels
-                size_hint_y: None
-                height: 30
-
-                canvas.before:
-                    Color:
-                        rgba: (21 / 255, .15, 81 / 255, 1)
-                    Rectangle:
-                        size: self.size
-                        pos: self.pos
-
-                FlatButton:
-                    text: 'Empregado'
-                    size_hint_x: .15
-
-                FlatButton:
-                    text: 'Função'
-                    size_hint_x: .1
-
-                FlatButton:
-                    text: 'Entrada'
-                    size_hint_x: .1
-
-                FlatButton:
-                    text: 'Saída'
-                    size_hint_x: .1
-
-                FlatButton:
-                    text: 'Horas Extras'
-                    size_hint_x: .1
-
-                FlatButton:
-                    text: 'Adicionais'
-                    size_hint_x: .1
-
-
-            BoxLayout:
-                id: emp_input
-                size_hint_y: None
-                height: 30
-                spacing: 5
-
-                TextInput:
-                    id: name
-                    multiline: False
-                    size_hint_x: .15
-
-                TextInput:
-                    id: function
-                    size_hint_x: .1
-                    multiline: False
-
-                TextInput:
-                    id: entry_time
-                    multiline: False
-                    size_hint_x: .1
-
-                TextInput:
-                    id: exit_time
-                    multiline: False
-                    size_hint_x: .1
-
-                TextInput:
-                    id: extra_hours
-                    multiline: False
-                    size_hint_x: .1
-
-                TextInput:
-                    id: adds
-                    multiline: False
-                    size_hint_x: .1
-                    on_text_validate: root.add_route()
-
-
-            BoxLayout:
-                id: emp_input
-                size_hint_y: None
-                height: 30
-                spacing: 5
-
-                TextInput:
-                    id: name
-                    multiline: False
-                    size_hint_x: .15
-
-                TextInput:
-                    id: function
-                    size_hint_x: .1
-                    multiline: False
-
-                TextInput:
-                    id: entry_time
-                    multiline: False
-                    size_hint_x: .1
-
-                TextInput:
-                    id: exit_time
-                    multiline: False
-                    size_hint_x: .1
-
-                TextInput:
-                    id: extra_hours
-                    multiline: False
-                    size_hint_x: .1
-
-                TextInput:
-                    id: adds
-                    multiline: False
-                    size_hint_x: .1
-
-
-
-            BoxLayout:
+                id: employees
                 orientation: 'vertical'
-                id: travel_labels
+                size_hint_x: .8
+                spacing: 5
 
                 BoxLayout:
+                    id: emp_labels
                     size_hint_y: None
-                    height: 17
+                    height: 30
 
                     canvas.before:
-                        Color:  
+                        Color:
                             rgba: (21 / 255, .15, 81 / 255, 1)
                         Rectangle:
                             size: self.size
                             pos: self.pos
-                    
-                    Label:
-                        text: 'Duração da Viagem'
 
                     Label:
-                        text: 'Intervalo de Repouso'
-                        size_hint_x: .4
-                
-                BoxLayout:
-                    size_hint_y: None
-                    height: 17
+                        text: 'Empregado'
+                        size_hint_x: .15
 
-                    canvas.before:
-                        Color:  
-                            rgba: (21 / 255, .15, 81 / 255, 1)
-                        Rectangle:
-                            size: self.size
-                            pos: self.pos
+                    Label:
+                        text: 'Função'
+                        size_hint_x: .1
+
+                    Label:
+                        text: 'Entrada'
+                        size_hint_x: .1
 
                     Label:
                         text: 'Saída'
+                        size_hint_x: .1
 
                     Label:
-                        text: 'P1'
+                        text: 'Horas Extras'
+                        size_hint_x: .1
 
                     Label:
-                        text: 'P2'
+                        text: 'Adicionais'
+                        size_hint_x: .1
 
-                    Label:
-                        text: 'P3'
-
-                    Label:
-                        text: 'Fiscal'
-
-                    Label:
-                        text: 'Chegada'
-
-                    Label:
-                        text: 'Atraso'
-
-                    Label:
-                        text: 'Início'
-
-                    Label:
-                        text: 'Término'
-
-                    Label:
-                        text: 'Total'
-
-            StackLayout:
-                id: travels
-                spacing: 5
 
                 BoxLayout:
+                    id: emp_input
                     size_hint_y: None
                     height: 30
                     spacing: 5
 
                     TextInput:
-                        multiline: False 
+                        id: name
+                        multiline: False
+                        size_hint_x: .15
 
                     TextInput:
-                        multiline: False 
+                        id: function
+                        size_hint_x: .1
+                        multiline: False
 
                     TextInput:
-                        multiline: False 
+                        id: entry_time
+                        multiline: False
+                        size_hint_x: .1
 
                     TextInput:
-                        multiline: False 
+                        id: exit_time
+                        multiline: False
+                        size_hint_x: .1
 
                     TextInput:
-                        multiline: False 
+                        id: extra_hours
+                        multiline: False
+                        size_hint_x: .1
 
                     TextInput:
-                        multiline: False 
+                        id: adds
+                        multiline: False
+                        size_hint_x: .1
+                        on_text_validate: root.add_route()
+
+
+                BoxLayout:
+                    id: emp_input
+                    size_hint_y: None
+                    height: 30
+                    spacing: 5
 
                     TextInput:
-                        multiline: False 
+                        id: name
+                        multiline: False
+                        size_hint_x: .15
 
                     TextInput:
-                        multiline: False 
+                        id: function
+                        size_hint_x: .1
+                        multiline: False
 
                     TextInput:
-                        multiline: False 
+                        id: entry_time
+                        multiline: False
+                        size_hint_x: .1
 
                     TextInput:
-                        multiline: False 
+                        id: exit_time
+                        multiline: False
+                        size_hint_x: .1
+
+                    TextInput:
+                        id: extra_hours
+                        multiline: False
+                        size_hint_x: .1
+
+                    TextInput:
+                        id: adds
+                        multiline: False
+                        size_hint_x: .1
+
+
+
+                BoxLayout:
+                    orientation: 'vertical'
+                    id: travel_labels
+
+                    BoxLayout:
+                        size_hint_y: None
+                        height: 17
+
+                        canvas.before:
+                            Color:  
+                                rgba: (21 / 255, .15, 81 / 255, 1)
+                            Rectangle:
+                                size: self.size
+                                pos: self.pos
+                        
+                        Label:
+                            text: 'Duração da Viagem'
+
+                        Label:
+                            text: 'Intervalo de Repouso'
+                            size_hint_x: .4
+                    
+                    BoxLayout:
+                        size_hint_y: None
+                        height: 17
+
+                        canvas.before:
+                            Color:  
+                                rgba: (21 / 255, .15, 81 / 255, 1)
+                            Rectangle:
+                                size: self.size
+                                pos: self.pos
+
+                        Label:
+                            text: 'Saída'
+
+                        Label:
+                            text: 'P1'
+
+                        Label:
+                            text: 'P2'
+
+                        Label:
+                            text: 'P3'
+
+                        Label:
+                            text: 'Fiscal'
+
+                        Label:
+                            text: 'Chegada'
+
+                        Label:
+                            text: 'Atraso'
+
+                        Label:
+                            text: 'Início'
+
+                        Label:
+                            text: 'Término'
+
+                        Label:
+                            text: 'Total'
+
+                StackLayout:
+                    id: travels
+                    spacing: 5
+
+                    BoxLayout:
+                        size_hint_y: None
+                        height: 30
+                        spacing: 5
+
+                        TextInput:
+                            multiline: False 
+
+                        TextInput:
+                            multiline: False 
+
+                        TextInput:
+                            multiline: False 
+
+                        TextInput:
+                            multiline: False 
+
+                        TextInput:
+                            multiline: False 
+
+                        TextInput:
+                            multiline: False 
+
+                        TextInput:
+                            multiline: False 
+
+                        TextInput:
+                            multiline: False 
+
+                        TextInput:
+                            multiline: False 
+
+                        TextInput:
+                            multiline: False 
+
+
+                BoxLayout:
+                    orientation: 'vertical'
+                    id: temp
 
 
             BoxLayout:
+                id: preview
                 orientation: 'vertical'
-                id: temp
+                size_hint_x: .2
 
-
-        BoxLayout:
-            id: preview
-            orientation: 'vertical'
-            size_hint_x: .2
-
-            TextInput:
-                id: receipt_preview
-                readonly: True
-                text: 'Nome da Empresa\n'
-            
+                TextInput:
+                    id: receipt_preview
+                    readonly: True
+                    text: 'Nome da Empresa\n'
+                

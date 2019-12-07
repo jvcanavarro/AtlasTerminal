@@ -1,87 +1,7 @@
-<LoginWindow>:
-    id: main_window
-    orientation: 'vertical'
-
-    canvas.before:
-        Color:
-            rgba: (1, 1, 1, 1)
-        Rectangle:
-            size: self.size
-            pos: self.pos
-
+<LoginScreen>:
     BoxLayout:
-        size_hint_y: None
-        height: 35
-
-        canvas.before:
-            Color:
-                rgba: (.1, .1, .1, 1)
-            Rectangle:
-                size: self.size
-                pos: self.pos
-
-        Label:
-            text: "Atlas Terminal"
-            font_size: 14
-            bold: True
-
-    BoxLayout:
-        id: temp
-
-    Image:
-        source: 'bus.png'
-        keep_ratio: False
-        allow_stretch: True
-        size_hint: 0.2, 0.4
-        pos_hint: {'center_x': 0.5, 'center_y': 0.35}
-
-    BoxLayout:
-        orientation: "vertical"
-        padding: self.size[0] / 3, 10
-        spacing: 20
-
-        BoxLayout:
-            orientation: "vertical"
-            size_hint_y: None
-            spacing: 10
-            height: 100
-
-            Label:
-                id: info
-                text: ''
-                markup: True
-                size_hint_y: None
-                height: 20
-
-            TextInput:
-                id: username_field
-                hint_text: "Username"
-                multiline: False
-                focus: True
-                on_text_validate: password_field.focus = True
-
-
-            TextInput:
-                id: password_field
-                hint_text: "Password"
-                multiline: False
-                password: True
-                on_text_validate: root.validate_user()
-
-        Button:
-            text: "Login"
-            size_hint_y: None
-            height: 40
-            background_color: (21 / 255, .15, 81 / 255, 1)
-            background_normal:'' 
-            on_release: root.validate_user()
-
-    BoxLayout:
-        orientation: "horizontal"
-        size_hint_y: None
-        padding: 10
-        spacing: 20
-        height: 50
+        id: main
+        orientation: 'vertical'
 
         canvas.before:
             Color:
@@ -89,14 +9,94 @@
             Rectangle:
                 size: self.size
                 pos: self.pos
-        Button:
-            text: "Esqueci a senha"
-            background_color: (21 / 255, .15, 81 / 255, 1)
-            background_normal:'' 
 
-        Button:
-            text: "Criar Conta"
-            background_color: (21 / 255, .15, 81 / 255, 1)
-            on_press: root.manager.current = 'lines'
-            background_normal:'' 
-            
+        BoxLayout:
+            size_hint_y: None
+            height: 35
+
+            canvas.before:
+                Color:
+                    rgba: (.1, .1, .1, 1)
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+
+            Label:
+                text: "Atlas Terminal"
+                font_size: 14
+                bold: True
+
+        BoxLayout:
+            id: temp
+
+        Image:
+            source: 'bus.png'
+            keep_ratio: False
+            allow_stretch: True
+            size_hint: 0.2, 0.4
+            pos_hint: {'center_x': 0.5, 'center_y': 0.35}
+
+        BoxLayout:
+            orientation: "vertical"
+            padding: self.size[0] / 3, 10
+            spacing: 20
+
+            BoxLayout:
+                orientation: "vertical"
+                size_hint_y: None
+                spacing: 10
+                height: 100
+
+                Label:
+                    id: info
+                    text: ''
+                    markup: True
+                    size_hint_y: None
+                    height: 20
+
+                TextInput:
+                    id: username_field
+                    hint_text: "Username"
+                    multiline: False
+                    focus: True
+                    on_text_validate: password_field.focus = True
+
+
+                TextInput:
+                    id: password_field
+                    hint_text: "Password"
+                    multiline: False
+                    password: True
+                    on_text_validate: root.validate_user()
+
+            Button:
+                text: "Login"
+                size_hint_y: None
+                height: 40
+                background_color: (21 / 255, .15, 81 / 255, 1)
+                background_normal:'' 
+                on_release: root.validate_user()
+
+        BoxLayout:
+            orientation: "horizontal"
+            size_hint_y: None
+            padding: 10
+            spacing: 20
+            height: 50
+
+            canvas.before:
+                Color:
+                    rgba: (1, 1, 1, 1)
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+            Button:
+                text: "Esqueci a senha"
+                background_color: (21 / 255, .15, 81 / 255, 1)
+                background_normal:'' 
+
+            Button:
+                text: "Criar Conta"
+                background_color: (21 / 255, .15, 81 / 255, 1)
+                background_normal:'' 
+                

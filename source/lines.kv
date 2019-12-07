@@ -1,87 +1,91 @@
-<FLatButton@ButtonBehavior+Label>:
-    font_size: 14
-
-<LinesWindow>:
-    id: main
-    orientation: 'vertical'
-
-    canvas.before:
-        Color:
-            rgba: (1, 1, 1, 1)
-        Rectangle:
-            size: self.size
-            pos: self.pos
-
+<LinesScreen>:
     BoxLayout:
-        size_hint_y: None
-        height: 35
+        id: main
+        orientation: 'vertical'
 
         canvas.before:
             Color:
-                rgba: (.1, .1, .1, 1)
+                rgba: (1, 1, 1, 1)
             Rectangle:
                 size: self.size
                 pos: self.pos
 
-        Label:
-            text: "Atlas Terminal"
-            font_size: 14
-            bold: True
+        BoxLayout:
+            size_hint_y: None
+            height: 35
 
-    AnchorLayout:
-        anchor_x: 'center'
-        anchor_y: 'center'
-        id: test
+            canvas.before:
+                Color:
+                    rgba: (.1, .1, .1, 1)
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
 
-        Button:
-            id: trigger
-            text: 'Linhas'
-            bold: True
-            on_release: dropdown.open(self)
-            height: 40
-            size_hint: (.5, None)
+            Label:
+                text: "Atlas Terminal"
+                font_size: 14
+                bold: True
 
-            Widget:
-                on_parent: dropdown.dismiss()
+        AnchorLayout:
+            anchor_x: 'center'
+            anchor_y: 'center'
+            id: test
 
-                DropDown:
-                    id: dropdown
-                    Button:
-                        text: 'Marituba - UFPA [914]'
-                        size_hint_y: None
-                        on_press: root.manager.current = 'system'
-                        height: 50
+            Button:
+                id: trigger
+                text: 'Linhas'
+                bold: True
+                on_release: dropdown.open(self)
+                height: 40
+                size_hint: (.5, None)
 
-                    Button:
-                        text: 'UFPA - Alcindo Cacela [308]'
-                        size_hint_y: None
-                        on_press: root.manager.current = 'system'
-                        height: 50
+                Widget:
+                    on_parent: dropdown.dismiss()
 
-                    Button:
-                        text: 'UFPA - Cidade Nova 6 [321]'
-                        size_hint_y: None
-                        on_press: root.manager.current = 'system'
-                        height: 50
+                    DropDown:
+                        id: dropdown
+                        Button:
+                            text: 'Marituba - UFPA [914]'
+                            size_hint_y: None
+                            on_press: root.manager.current = 'system'
+                            on_release: dropdown.dismiss()
+                            height: 50
 
-                    Button:
-                        text: 'Curuçambá - UFPA [999]'
-                        size_hint_y: None
-                        on_press: root.manager.current = 'system'
-                        height: 50
+                        Button:
+                            text: 'UFPA - Alcindo Cacela [308]'
+                            size_hint_y: None
+                            on_release: root.manager.current = 'system'
+                            on_release: dropdown.dismiss()
+                            height: 50
 
-                    Button:
-                        text: 'Pratinha - UFPA [643]'
-                        size_hint_y: None
-                        on_press: root.manager.current = 'system'
-                        height: 50
+                        Button:
+                            text: 'UFPA - Cidade Nova 6 [321]'
+                            size_hint_y: None
+                            on_press: root.manager.current = 'system'
+                            on_release: dropdown.dismiss()
+                            height: 50
 
-                    Button:
-                        text: 'UFPA - Pedreira [306]'
-                        size_hint_y: None
-                        on_press: root.manager.current = 'system'
-                        height: 50
+                        Button:
+                            text: 'Curuçambá - UFPA [999]'
+                            size_hint_y: None
+                            on_press: root.manager.current = 'system'
+                            on_release: dropdown.dismiss()
+                            height: 50
+
+                        Button:
+                            text: 'Pratinha - UFPA [643]'
+                            size_hint_y: None
+                            on_press: root.manager.current = 'system'
+                            on_release: dropdown.dismiss()
+                            height: 50
+
+                        Button:
+                            text: 'UFPA - Pedreira [306]'
+                            size_hint_y: None
+                            on_press: root.manager.current = 'system'
+                            on_release: dropdown.dismiss()
+                            height: 50
 
 
-    BoxLayout:
-        id: temp
+        BoxLayout:
+            id: temp

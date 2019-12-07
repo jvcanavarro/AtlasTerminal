@@ -13,6 +13,9 @@ class LoginScreen(Screen):
 
         if username == '' or password == '':
             info.text = '[color=#FF0000]username and password required[/color]'
+        else:
+            self.manager.current = "lines"
+
 
 
 class LoginApp(App):
