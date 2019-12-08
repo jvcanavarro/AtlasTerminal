@@ -1,2 +1,2 @@
-# Digiterminal
-UFPA Bus Terminal Control Digital Spreadsheet using Python [Kivy]
+# AtlasTerminal
+Terminal Digital Control using Python [Kivy]
