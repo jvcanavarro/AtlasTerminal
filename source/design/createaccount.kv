@@ -40,4 +40,29 @@
                 hint_text: 'Sobrenome'
 
         BoxLayout:
+            orientation: 'vertical'
+            size_hint_y: None
+            padding: self.size[0] / 3, 10
+            spacing: 20
+            height: 100
+
+            TextInput:
+                hint_text: 'Email'
+                multiline: false
+
+            TextInput:
+                hint_text: 'Confirmar Email'
+                multiline: false
+
+            TextInput:
+                hint_text: 'Senha'
+                multiline: false
+                password: True
+
+            TextInput:
+                hint_text: 'Confirmar Senha'
+                multiline: false
+                password: True
+
+        BoxLayout:
             id: temp
