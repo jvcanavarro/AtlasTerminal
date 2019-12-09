@@ -44,25 +44,29 @@
             size_hint_y: None
             padding: self.size[0] / 3, 10
             spacing: 20
-            height: 100
+            height: 250
 
             TextInput:
                 hint_text: 'Email'
-                multiline: false
+                multiline: False
 
             TextInput:
                 hint_text: 'Confirmar Email'
-                multiline: false
+                multiline: False
 
             TextInput:
                 hint_text: 'Senha'
-                multiline: false
+                multiline: False
                 password: True
 
             TextInput:
                 hint_text: 'Confirmar Senha'
-                multiline: false
+                multiline: False
                 password: True
+
+            Button:
+                text: 'Criar Conta'
+                on_release: root.manager.current = 'login'
 
         BoxLayout:
             id: temp

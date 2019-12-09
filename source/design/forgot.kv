@@ -1,0 +1,16 @@
+<ForgotPasswordScreen>:
+    BoxLayout:
+        id: main
+        orientation: 'vertical'
+
+        canvas.before:
+            Color:
+                rgba: (1, 1, 1, 1)
+            Rectangle:
+                size: self.size
+                pos: self.pos
+
+        Button:
+            text: 'Exit'
+            on_release: root.manager.current = 'login'
+

@@ -9,6 +9,10 @@ class CreateAccountScreen(Screen):
     pass
 
 
+class ForgotPasswordScreen(Screen):
+    pass
+
+
 class LoginScreen(Screen):
     def validate_user(self):
         username = self.ids.username_field
@@ -33,20 +37,22 @@ class SystemScreen(Screen):
             route.add_widget(TextInput())
 
         container = self.ids.travels
-        container.add_widget(travel)
+        container.add_widget(route)
 
 
 class ManagerApp(App):
     def build(self):
         Builder.load_file('design/system.kv')
         Builder.load_file('design/lines.kv')
-        Builder.load_file('design/createaccount.kv')
+        Builder.load_file('design/create.kv')
+        Builder.load_file('design/forgot.kv')
         Builder.load_file('design/login.kv')
 
         manager = ScreenManager()
 
         manager.add_widget(LoginScreen(name='login'))
         manager.add_widget(CreateAccountScreen(name='create'))
+        manager.add_widget(ForgotPasswordScreen(name='forgot'))
         manager.add_widget(LinesScreen(name='lines'))
         manager.add_widget(SystemScreen(name='system'))
         return manager
