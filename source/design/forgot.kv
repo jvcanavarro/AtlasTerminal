@@ -10,6 +10,37 @@
                 size: self.size
                 pos: self.pos
 
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint_y: None
+            height: 35
+
+            canvas.before:
+                Color:
+                    rgba: (.1, .1, .1, 1)
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+
+            Label:
+                text: 'Atlas Terminal'
+                font_size: 14
+                bold: True
+
+
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint_y: None
+            padding: self.size[0] / 3, 10
+            spacing: 20
+            height: 50
+
+            TexInput:
+                hint_text: 'Email'
+
+            Button:
+                text: 'Enviar Link para Mudança de Senha'
+
         Button:
             text: 'Exit'
             on_release: root.manager.current = 'login'
