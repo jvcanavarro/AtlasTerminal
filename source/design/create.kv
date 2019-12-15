@@ -27,46 +27,54 @@
                 font_size: 14
                 bold: True
 
-        BoxLayout:
-            size_hint_y: None
-            padding: self.size[0] / 3, 10
-            spacing: 20
-            height: 50
+        AnchorLayout:
+            anchor_x: 'center'
+            anchor_y: 'center'
 
-            TextInput:
-                hint_text: 'Nome'
+            BoxLayout:
+                orientation: 'vertical'
+                size_hint_y: None
+                padding: self.size[0] / 3, 5
 
-            TextInput:
-                hint_text: 'Sobrenome'
+                orientation: 'vertical'
+                spacing: 15
+                height: 420
 
-        BoxLayout:
-            orientation: 'vertical'
-            size_hint_y: None
-            padding: self.size[0] / 3, 10
-            spacing: 20
-            height: 250
+                TextInput:
+                    hint_text: 'Nome'
+                    multiline: False
 
-            TextInput:
-                hint_text: 'Email'
-                multiline: False
+                TextInput:
+                    hint_text: 'Sobrenome'
+                    multiline: False
+                
+                TextInput:
+                    hint_text: 'Email'
+                    multiline: False
 
-            TextInput:
-                hint_text: 'Confirmar Email'
-                multiline: False
+                TextInput:
+                    hint_text: 'Confirmar Email'
+                    multiline: False
 
-            TextInput:
-                hint_text: 'Senha'
-                multiline: False
-                password: True
+                TextInput:
+                    hint_text: 'Senha'
+                    multiline: False
+                    password: True
 
-            TextInput:
-                hint_text: 'Confirmar Senha'
-                multiline: False
-                password: True
+                TextInput:
+                    hint_text: 'Confirmar Senha'
+                    multiline: False
+                    password: True
 
-            Button:
-                text: 'Criar Conta'
-                on_release: root.manager.current = 'login'
+                Button:
+                    text: 'Criar Conta'
+                    bold: True
+                    background_color: (21 / 255, .15, 81 / 255, 1)
+                    background_normal: ''
+                    on_release: root.manager.current = 'login'
 
-        BoxLayout:
-            id: temp
+                Button:
+                    text: 'Voltar'
+                    on_release: root.manager.current = 'login'
+                    background_color: (21 / 255, .15, 81 / 255, 1)
+                    background_normal: ''
