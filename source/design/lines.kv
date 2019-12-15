@@ -26,11 +26,15 @@
                 font_size: 14
                 bold: True
 
+        BoxLayout:
+            id: temp
+            size_hint_y: .3
+
         AnchorLayout:
             anchor_x: 'center'
-            anchor_y: 'center'
-            id: test
-
+            anchor_y: 'top'
+            id: lines
+    
             Button:
                 id: trigger
                 text: 'Linhas'
@@ -86,6 +90,19 @@
                             on_release: dropdown.dismiss()
                             height: 50
 
+                BoxLayout:
 
-        BoxLayout:
-            id: temp
+                    canvas.before:
+                        Color:
+                            rgba: (1, 1, 1, 1)
+                        Rectangle:
+                            size: self.size
+                            pos: self.pos
+
+                    Button:
+                        size_hint: 5, .4
+                        text: 'Sair'
+                        background_color: (21 / 255, .15, 81 / 255, 1)
+                        background_normal: ''
+                        on_release: root.manager.current = 'login'
+

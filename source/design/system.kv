@@ -286,6 +286,7 @@
                 id: preview
                 orientation: 'vertical'
                 size_hint_x: .2
+                spacing: 10
 
                 TextInput:
                     id: receipt_preview
@@ -295,6 +296,8 @@
                 Button:
                     size_hint: 1, .05
                     text: 'Sair'
+                    background_color: (21 / 255, .15, 81 / 255, 1)
+                    background_normal: ''
                     on_release: root.manager.current = 'login'
                     
                 

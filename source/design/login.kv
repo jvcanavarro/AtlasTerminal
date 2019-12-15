@@ -30,11 +30,9 @@
             id: temp
 
         Image:
-            source: 'bus.png'
-            keep_ratio: False
+            source: 'bus.jpg'
             allow_stretch: True
-            size_hint: 0.2, 0.8
-            pos_hint: {'center_x': 0.5, 'center_y': 0.35}
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
 
         BoxLayout:
             orientation: "vertical"
@@ -56,7 +54,7 @@
 
                 TextInput:
                     id: username_field
-                    hint_text: "Username"
+                    hint_text: "Usuário"
                     multiline: False
                     focus: True
                     on_text_validate: password_field.focus = True
@@ -64,13 +62,13 @@
 
                 TextInput:
                     id: password_field
-                    hint_text: "Password"
+                    hint_text: "Senha"
                     multiline: False
                     password: True
                     on_text_validate: root.validate_user()
 
             Button:
-                text: "Login"
+                text: "Entrar"
                 bold: True
                 size_hint_y: None
                 height: 35

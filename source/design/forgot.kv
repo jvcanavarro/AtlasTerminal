@@ -32,11 +32,12 @@
             anchor_y: 'center'
 
             BoxLayout:
+                id: ids
                 orientation: 'vertical'
                 size_hint_y: None
-                padding: self.size[0] / 3, 10
+                padding: self.size[0] / 2.5, 10
                 spacing: 10
-                height: 190
+                height: 230
 
                 Label:
                     text: 'Enviaremos um link para recuperação da senha'
@@ -44,21 +45,32 @@
                     bold: True
                     color: (21 / 255, .15, 81 / 255, 1)
 
+                Label:
+                    id: info
+                    bold: True
+                    color: (200 / 255, .1, .1, 1)
+
                 TextInput:
+                    id: recovery_email
                     hint_text: 'Email'
                     multiline: False
+                    on_text_validate: root.send_recovery_email()
 
                 Button:
                     text: 'Enviar'
                     bold: True
+                    on_release: root.send_recovery_email()
                     background_color: (21 / 255, .15, 81 / 255, 1)
                     background_normal: ''
 
                 Button:
                     text: 'Voltar'
                     on_release: root.manager.current = 'login'
+                    on_release: root.ids.info.text = ''
+                    on_release: root.ids.recovery_email.text = ''
                     background_color: (21 / 255, .15, 81 / 255, 1)
                     background_normal: ''
+
 
         BoxLayout:
             id: temp
