@@ -150,3 +150,4 @@ class ManagerApp(App):
 
 if __name__ == '__main__':
     ManagerApp().run()
+    conn.close()
