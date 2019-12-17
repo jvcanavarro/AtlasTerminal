@@ -65,6 +65,7 @@ class LoginScreen(Screen):
             self.manager.current = 'lines'
             username.text = ''
             password.text = ''
+            info.text = ''
         else:
             info.text = '[color=#FF0000]Senha Incorreta[/color]'
 

@@ -138,7 +138,6 @@
                         id: adds
                         multiline: False
                         size_hint_x: .1
-                        on_text_validate: root.add_route()
 
 
                 BoxLayout:
@@ -268,6 +267,7 @@
 
                         TextInput:
                             multiline: False 
+                            on_text_validate: root.add_route()
 
                         TextInput:
                             multiline: False 
@@ -296,7 +296,8 @@
                 TextInput:
                     id: receipt_preview
                     readonly: True
-                    text: 'Nome da Empresa\n'
+                    text: 'Viação Guajará'
+                    font_size: 18
 
                 Button:
                     size_hint: 1, .05
