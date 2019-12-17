@@ -49,15 +49,17 @@
                     DropDown:
                         id: dropdown
                         Button:
-                            text: 'Marituba - UFPA [914]'
+                            text: 'UFPA - Marituba [914]'
                             size_hint_y: None
-                            on_press: root.manager.current = 'system'
+                            on_release: root.set_current_line(self.text)
+                            on_release: root.manager.current = 'system'
                             on_release: dropdown.dismiss()
                             height: 50
 
                         Button:
                             text: 'UFPA - Alcindo Cacela [308]'
                             size_hint_y: None
+                            on_release: root.set_current_line(self.text)
                             on_release: root.manager.current = 'system'
                             on_release: dropdown.dismiss()
                             height: 50
@@ -65,28 +67,32 @@
                         Button:
                             text: 'UFPA - Cidade Nova 6 [321]'
                             size_hint_y: None
-                            on_press: root.manager.current = 'system'
+                            on_release: root.set_current_line(self.text)
+                            on_release: root.manager.current = 'system'
                             on_release: dropdown.dismiss()
                             height: 50
 
                         Button:
-                            text: 'Curuçambá - UFPA [999]'
+                            text: 'UFPA - Curuçambá [999]'
                             size_hint_y: None
-                            on_press: root.manager.current = 'system'
+                            on_release: root.set_current_line(self.text)
+                            on_release: root.manager.current = 'system'
                             on_release: dropdown.dismiss()
                             height: 50
 
                         Button:
-                            text: 'Pratinha - UFPA [643]'
+                            text: 'UFPA - Pratinha [643]'
                             size_hint_y: None
-                            on_press: root.manager.current = 'system'
+                            on_release: root.set_current_line(self.text)
+                            on_release: root.manager.current = 'system'
                             on_release: dropdown.dismiss()
                             height: 50
 
                         Button:
                             text: 'UFPA - Pedreira [306]'
                             size_hint_y: None
-                            on_press: root.manager.current = 'system'
+                            on_release: root.set_current_line(self.text)
+                            on_release: root.manager.current = 'system'
                             on_release: dropdown.dismiss()
                             height: 50
 

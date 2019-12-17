@@ -1,8 +1,12 @@
 from kivy.app import App
+from kivy.clock import Clock
 from kivy.lang import Builder
+from kivy.uix.label import Label
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.textinput import TextInput
+from kivy.properties import StringProperty
 from kivy.uix.screenmanager import ScreenManager, Screen
+from datetime import date, datetime, timedelta
 
 
 class CreateAccountScreen(Screen):
@@ -16,7 +20,6 @@ class CreateAccountScreen(Screen):
         email = self.ids.email
         password = self.ids.password
         conf_password = self.ids.conf_password
-
 
         if username.text and email.text and password.text and conf_password.text:
             if password.text != conf_password.text:
@@ -40,6 +43,7 @@ class ForgotPasswordScreen(Screen):
         info = self.ids.info
         login = self.manager.get_screen('login')
         emails = login.emails
+
         if email.text in emails.values():
             info.text = 'Email enviado'
         else:
@@ -62,15 +66,34 @@ class LoginScreen(Screen):
             username.text = ''
             password.text = ''
         else:
-            print(self.accounts)
-            info.text = '[color=#FF0000]Usuário não Registrado ou Senha Incorreta[/color]'
+            info.text = '[color=#FF0000]Senha Incorreta[/color]'
 
 
 class LinesScreen(Screen):
-    pass
+    def set_current_line(self, text):
+        system = self.manager.get_screen('system')
+        system.actual_line = text[7:]
 
 
 class SystemScreen(Screen):
+    actual_date = StringProperty()
+    actual_line = StringProperty()
+    actual_time = StringProperty()
+
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        today = date.today()
+        formated_date = today.strftime("%B %d, %Y")
+        self.actual_date = formated_date
+
+        self.time = datetime.now()
+        Clock.schedule_interval(self.update_clock, 1)
+        self.actual_time = self.time.strftime("%H:%M:%S")
+
+    def update_clock(self, *args):
+        self.time = datetime.now()
+        self.actual_time = self.time.strftime('%H:%M:%S')
+
     def add_route(self):
         route = BoxLayout(size_hint_y=None, height=30, spacing=5)
 
@@ -82,7 +105,6 @@ class SystemScreen(Screen):
 
 
 class ManagerApp(App):
-
     def build(self):
         Builder.load_file('design/system.kv')
         Builder.load_file('design/lines.kv')
@@ -97,6 +119,7 @@ class ManagerApp(App):
         manager.add_widget(ForgotPasswordScreen(name='forgot'))
         manager.add_widget(LinesScreen(name='lines'))
         manager.add_widget(SystemScreen(name='system'))
+
         return manager
 
 

@@ -38,18 +38,23 @@
                 Rectangle:
                     size: self.size
                     pos: self.pos
+            Label
+                id: current_line
+                text: root.actual_line
+                bold: True
+                size_hint_x: .2
 
             Label:
                 id: date
-                text: 'Data'
+                text: root.actual_date
+                bold: True
 
             Label:
-                id: current_turn
-                text: 'Turno'
-            
-            Label
-                id: current_order
-                text: 'Linha'
+                id: time
+                text: root.actual_time 
+                bold: True
+                size_hint_x: .2
+
 
         BoxLayout:
             padding: 7
