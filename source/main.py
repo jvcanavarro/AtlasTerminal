@@ -1,12 +1,17 @@
 from kivy.app import App
 from kivy.clock import Clock
 from kivy.lang import Builder
-from kivy.uix.label import Label
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.textinput import TextInput
 from kivy.properties import StringProperty
 from kivy.uix.screenmanager import ScreenManager, Screen
-from datetime import date, datetime, timedelta
+from datetime import date, datetime
+import sqlite3
+import os.path
+
+
+conn = sqlite3.connect('accounts.db')
+cursor = conn.cursor()
 
 
 class CreateAccountScreen(Screen):
@@ -53,8 +58,17 @@ class ForgotPasswordScreen(Screen):
 class LoginScreen(Screen):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
+
         self.accounts = {'admin': 'admin'}
         self.emails = {'admin': 'admin@admin.com'}
+        self.db_accounts = ('admin', 'admin@admin.com', 'admin')
+
+        cursor.execute("""
+                INSERT INTO accounts(username, email, password)
+                VALUES (?, ?, ?)
+                """, (self.db_accounts))
+
+        conn.commit()
 
     def validate_user(self):
         username = self.ids.username_field
@@ -120,6 +134,16 @@ class ManagerApp(App):
         manager.add_widget(ForgotPasswordScreen(name='forgot'))
         manager.add_widget(LinesScreen(name='lines'))
         manager.add_widget(SystemScreen(name='system'))
+
+        if not os.path.isfile('accounts.db'):
+            cursor.execute("""
+                    CREATE TABLE accounts (
+                    id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+                    username TEXT NOT NULL,
+                    email TEXT NOT NULL,
+                    password TEXT NOT NULL
+                    );
+                    """)
 
         return manager
 
