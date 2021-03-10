@@ -1,2 +1,2 @@
 # Atlas Terminal
- Public Transport Control System using Python 
+For urban mobility companies - especially those of public transport - that need a precise and reliable way to control fleets, Atlas Terminal is a multiplatform technology that aims to increase efficiency and productivity in the management carried out by such companies. It differs from current technologies by offering an organized and accurate way of controlling data through a complete and accessible interface.
