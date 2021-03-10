@@ -1,2 +1,2 @@
-# AtlasTerminal
-Terminal Digital Control using Python [Kivy]
+# Atlas Terminal
+ Public Transport Control System using Python 
